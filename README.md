@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/assets/opusclip-rebrand-banner.svg" alt="OpusClip Rebrand" width="100%">
+  <img src="docs/assets/opusclip-rebrand-banner.svg" alt="OpusClip Rebrand, AI-Native Talent Hunt with Codex '26" width="100%">
 </p>
 
-**Visible judgment: a new direction for OpusClip, and a homepage you can scroll.**
+**AI-Native Talent Hunt with Codex '26: an OpusClip rebrand built around visible judgment, and a homepage you can scroll.**
 
 My submission to The AI-Native Talent Hunt with Codex by Emergences Labs (SF Tech Week, October 2026). The brief came from OpusClip: rebrand the company the way a Senior Visual Designer would, with a written thesis and a proof-of-concept page the team could actually build.
 
