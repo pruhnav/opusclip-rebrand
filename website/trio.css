@@ -1,0 +1,74 @@
+/* Trio: three product phones on one screen. Hover or focus a phone to select it;
+   the others dim and its copy and controls appear in a box beside it. Desktop. */
+.trio {
+  --fh: min(calc(100svh - 250px), 620px);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto 1fr;
+  justify-content: center; align-items: center;
+  column-gap: clamp(40px, 6vw, 110px);
+  padding: 112px var(--gutter) 40px;
+}
+.trio__title {
+  grid-column: 1 / -1; justify-self: center; align-self: end;
+  margin: 0 0 clamp(20px, 3.5vh, 36px);
+  font: 500 clamp(1.75rem, 2.4vw, 2.5rem)/1.05 var(--font-display);
+  letter-spacing: -0.035em; text-align: center;
+}
+.trio > .short {
+  height: auto; min-height: 0; padding: 0; display: block;
+  overflow: visible; isolation: auto; background: transparent;
+  scroll-snap-align: none; scroll-snap-stop: normal;
+  position: relative; z-index: 1;
+}
+.trio > .short.is-sel { z-index: 5; }
+.trio > .short::after { display: none; }
+.trio .short__stage {
+  grid-column: auto; cursor: pointer; border-radius: var(--radius);
+  transition: opacity .5s var(--ease-out), filter .5s var(--ease-out), transform .5s var(--ease-out);
+}
+.trio .short__stage:focus-visible { outline: 2px solid var(--on-field); outline-offset: 6px; }
+.trio > .short:not(.is-sel) .short__stage { opacity: .32; filter: grayscale(1); transform: scale(.94); }
+.trio > .short.is-sel .short__stage { transform: scale(1); }
+
+/* The pop-up box */
+.trio .short__copy,
+.trio #teams .short__copy,
+.trio #teams:not([data-aspect="9:16"]) .short__copy {
+  position: absolute; top: 50%; left: calc(100% + 20px); right: auto;
+  width: 340px; max-width: none; margin: 0;
+  padding: 26px 26px 22px;
+  border-radius: 22px;
+  background: rgb(21 21 23 / .9);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2); backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgb(255 255 255 / .09);
+  box-shadow: 0 30px 70px -24px rgb(0 0 0 / .7);
+  opacity: 0; visibility: hidden;
+  transform: translate(-10px, -50%);
+  transition: opacity .3s var(--ease-out), transform .4s var(--ease-out), visibility 0s linear .3s;
+}
+.trio #teams .short__copy { left: auto; right: calc(100% + 20px); transform: translate(10px, -50%); }
+.trio > .short.is-sel .short__copy,
+.trio > #teams.is-sel .short__copy {
+  opacity: 1; visibility: visible; transform: translate(0, -50%);
+  transition: opacity .3s var(--ease-out) .08s, transform .4s var(--ease-out) .08s, visibility 0s;
+}
+.trio .short__copy .headline { font-size: clamp(1.5rem, 1.9vw, 1.9rem); margin: 0 0 10px; }
+.trio .short__copy p { font-size: 1rem; line-height: 1.45; }
+
+/* Controls live inside the box */
+.trio .short__copy .rail {
+  position: static; width: auto; margin-top: 20px; padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / .09);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px 6px;
+}
+.trio .short__copy .rail__sep { display: none; }
+.trio .short__copy .rail__dot { width: 44px; height: 44px; }
+.trio .short__copy .rail button { font-size: .75rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .trio .short__stage, .trio .short__copy { transition: none !important; }
+  .trio > .short:not(.is-sel) .short__stage { transform: none; }
+}
+
+.trio > #teams.is-sel .short__copy { transform: translate(0, -50%); }
