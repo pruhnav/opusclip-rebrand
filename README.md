@@ -4,7 +4,7 @@
 
 **Visible judgment: a new direction for OpusClip, and a homepage you can scroll.**
 
-My submission for the OpusClip Senior Visual Designer challenge: a rebrand thesis and a working proof of concept of the homepage.
+My submission to The AI-Native Talent Hunt with Codex by Emergences Labs (SF Tech Week, October 2026). The brief came from OpusClip: rebrand the company the way a Senior Visual Designer would, with a written thesis and a proof-of-concept page the team could actually build.
 
 - [`rebrand-thesis.pdf`](rebrand-thesis.pdf): the direction, why it fits OpusClip now, and how it compares with the current brand.
 - [`proof-of-concept-page.pdf`](proof-of-concept-page.pdf): high-fidelity desktop frames and annotated specs for the key interactions.
