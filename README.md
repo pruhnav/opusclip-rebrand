@@ -1,4 +1,8 @@
-# OpusClip rebrand: Visible judgment
+<p align="center">
+  <img src="docs/assets/opusclip-rebrand-banner.svg" alt="OpusClip Rebrand" width="100%">
+</p>
+
+**Visible judgment: a new direction for OpusClip, and a homepage you can scroll.**
 
 My submission for the OpusClip Senior Visual Designer challenge: a rebrand thesis and a working proof of concept of the homepage.
 
